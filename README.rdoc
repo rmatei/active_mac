@@ -2,6 +2,8 @@
 
 * http://github.com/rmatei/active_mac
 
+== DESCRIPTION:
+
 Provides an ORM interface to the data of any AppleScript-enabled application. Useful for querying and scripting any Mac application in an intuitive way - you can pretend your iTunes library is a relational database, for instance.
 
 == INSTALL:
