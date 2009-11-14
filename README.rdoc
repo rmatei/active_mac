@@ -8,7 +8,7 @@ Provides an ORM interface to the data of any AppleScript-enabled application. Us
 
 == INSTALL:
 
-  sudo gem install active_mac
+  sudo gem install active_mac --source "http://gemcutter.org"
 
 == USE:
   
