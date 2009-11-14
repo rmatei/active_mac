@@ -14,7 +14,7 @@ $hoe = Hoe.spec 'active_mac' do
   self.developer 'Robert Matei', 'rmatei@gmail.com'
   self.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
   self.rubyforge_name       = self.name # TODO this is default value
-  self.extra_deps         = [['activesupport','>= 2.0.2']]
+  self.extra_deps         = [['rb-appscript','>= 0.5.3'], ['activesupport', '>= 2.2.2']]
 end
 
 require 'newgem/tasks'
