@@ -1,33 +1,29 @@
-= active_tunes
+= active_mac
 
 * http://github.com/rmatei/active_mac
 
-== DESCRIPTION:
-
 Provides an ORM interface to the data of any AppleScript-enabled application. Useful for querying and scripting any Mac application in an intuitive way - you can pretend your iTunes library is a relational database, for instance.
 
-== FEATURES/PROBLEMS:
+== INSTALL:
 
-* FIX (list of features or problems)
+  sudo gem install active_mac
 
-== SYNOPSIS:
-
-  FIX (code sample of usage)
+== USE:
+  
+  require 'active_mac'
+  app("iTunes").selection.each { |track| track.name = track.name.titleize }
+  app("iTunes").play
 
 == REQUIREMENTS:
 
 * Mac OS X
 * rb-appscript
 
-== INSTALL:
-
-  sudo gem install active_mac
-
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 Robert Matei
+Copyleft 2009 Robert Cezar Matei
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
