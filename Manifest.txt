@@ -3,7 +3,10 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
+active_mac.gemspec
 lib/active_mac.rb
+lib/active_mac/app.rb
+lib/active_mac/object.rb
 script/console
 script/destroy
 script/generate
