@@ -21,6 +21,11 @@ Provides an ORM interface to the data of any AppleScript-enabled application. Us
 * Mac OS X
 * rb-appscript
 
+== TODO:
+
+* actually implementing searching, e.g. app("iTunes").tracks.find_all_by_artist("The Beatles")
+* inheriting all possible properties and methods from the AppleScript reference
+
 == LICENSE:
 
 (The MIT License)
