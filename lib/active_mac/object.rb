@@ -9,6 +9,7 @@ module ActiveMac
     def initialize(applescript_reference)
       # raise ArgumentError, "Objects must be initialized from an Appscript::Reference" unless applescript_reference.instance_of? Appscript::Reference
       self.reference = applescript_reference
+      @properties_cache = {}
       build_properties
       build_commands
     end
@@ -27,14 +28,16 @@ module ActiveMac
         
         # Readers
         self.class.send(:define_method, property) do
-          returning reference.send(property).get do |result|
-            result.map! { |element| Object.new(element) } if result.class == Array
-          end
+          @properties_cache[property] ||= reference.send(property).get
+          # @properties_cache[property] = nil if @properties_cache[property].blank?
+          @properties_cache[property].map! { |element| Object.new(element) } if @properties_cache[property].class == Array
+          return @properties_cache[property]
         end
         
         # Writers
         self.class.send(:define_method, "#{property}=") do |value|
-          reference.send(property).set value
+          @properties_cache[property] = nil # clear cache
+          reference.send(property).set(value || "")
         end
         
       end
